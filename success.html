@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặt bàn thành công</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      /* Card Container */
+      .card {
+        background: #ffffff;
+        width: 100%;
+        max-width: 400px;
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Bảng thông tin chi tiết */
+      .info-table {
+        background-color: #f7f7f7;
+        border: 1px solid #e5e5e5;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin-bottom: 24px;
+      }
+
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+      }
+
+      .info-row:not(:last-child) {
+        border-bottom: 1px solid #eeeeee;
+      }
+
+      .info-label {
+        color: #757575;
+        font-size: 14px;
+      }
+
+      .info-value {
+        color: #212121;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: right;
+      }
+
+      /* Nút bấm ở Khung 1 (Xác nhận đặt bàn) */
+      .btn-confirm {
+        width: 100%;
+        background-color: #e65100; /* Màu cam nổi bật */
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        padding: 14px 0;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .btn-confirm:hover {
+        background-color: #d84315;
+      }
+
+      .sub-note {
+        text-align: center;
+        color: #9e9e9e;
+        font-size: 12px;
+        margin-top: 12px;
+      }
+
+      /* Header Khung 2 (Thông báo thành công) */
+      .success-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .success-icon {
+        width: 48px;
+        height: 48px;
+        background-color: #2e7d32; /* Màu xanh lá */
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      .success-title {
+        color: #2e7d32;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .success-desc {
+        color: #616161;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      /* Khung Mã đặt chỗ */
+      .code-box {
+        border: 1.5px dashed #2e7d32;
+        background-color: #f1f8e9;
+        border-radius: 6px;
+        text-align: center;
+        padding: 12px;
+        margin-bottom: 20px;
+      }
+
+      .code-label {
+        color: #616161;
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+
+      .code-value {
+        color: #1b5e20;
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+
+      /* Nhóm 2 nút ở Khung 2 */
+      .button-group {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .btn-dark {
+        flex: 1;
+        background-color: #333333;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .btn-dark:hover {
+        background-color: #1a1a1a;
+      }
+
+      .btn-outline {
+        flex: 1;
+        background-color: #ffffff;
+        color: #424242;
+        border: 1px solid #cccccc;
+        border-radius: 6px;
+        padding: 12px 8px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .btn-outline:hover {
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <!-- Thông báo thành công -->
+      <div class="success-header">
+        <div class="success-icon">✓</div>
+        <div>
+          <div class="success-title">Đặt bàn thành công!</div>
+          <div class="success-desc">
+            Nhà hàng đã ghi nhận đơn. Vui lòng đưa mã này khi đến quán.
+          </div>
+        </div>
+      </div>
+
+      <!-- Mã đặt chỗ -->
+      <div class="code-box">
+        <div class="code-label">Mã đặt chỗ</div>
+        <div class="code-value">RF-48213</div>
+      </div>
+
+      <!-- Bảng thông tin chi tiết -->
+      <div class="info-table">
+        <div class="info-row">
+          <span class="info-label">Nhà hàng</span>
+          <span class="info-value">Rikkei Bistro — Quận 1</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Ngày giờ</span>
+          <span class="info-value">Thứ 7, 03/10/2026 · 19:00</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Số khách</span>
+          <span class="info-value">2 khách</span>
+        </div>
+      </div>
+
+      <!-- Hai nút điều hướng -->
+      <div class="button-group">
+        <button class="btn-dark">Xem đặt bàn của tôi</button>
+        <button class="btn-outline">Về trang chủ</button>
+      </div>
+    </div>
+  </body>
+</html>
